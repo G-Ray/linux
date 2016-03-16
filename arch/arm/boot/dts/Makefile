@@ -433,6 +433,7 @@ dtb-$(CONFIG_SOC_AM33XX) += \
 	am335x-boneblack-nhdmi-overlay.dtb \
 	am335x-boneblack-hdmi-overlay.dtb \
 	am335x-boneblack-emmc-overlay.dtb \
+	am335x-boneblack-emmc-android-overlay.dtb \
 	am335x-boneblack-bbb-exp-r.dtb \
 	am335x-boneblack-bbb-exp-c.dtb \
 	am335x-arduino-tre.dtb \
