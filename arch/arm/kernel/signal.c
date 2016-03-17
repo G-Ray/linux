@@ -470,7 +470,7 @@ setup_rt_frame(struct ksignal *ksig, sigset_t *set, struct pt_regs *regs)
 
 /*
  * OK, we're invoking a handler
- */	
+ */
 static void handle_signal(struct ksignal *ksig, struct pt_regs *regs)
 {
 	sigset_t *oldset = sigmask_to_save();
@@ -570,11 +570,13 @@ do_work_pending(struct pt_regs *regs, unsigned int thread_flags, int syscall)
 	do {
 		if (likely(thread_flags & (_TIF_NEED_RESCHED |
 					   _TIF_NEED_RESCHED_LAZY))) {
+			local_irq_disable();
+			hard_cond_local_irq_enable();
 			schedule();
 		} else {
 			if (unlikely(!user_mode(regs)))
 				return 0;
-			local_irq_enable();
+			hard_local_irq_enable();
 			if (thread_flags & _TIF_SIGPENDING) {
 				int restart = do_signal(regs, syscall);
 				if (unlikely(restart)) {
@@ -593,7 +595,7 @@ do_work_pending(struct pt_regs *regs, unsigned int thread_flags, int syscall)
 				tracehook_notify_resume(regs);
 			}
 		}
-		local_irq_disable();
+		hard_local_irq_disable();
 		thread_flags = current_thread_info()->flags;
 	} while (thread_flags & _TIF_WORK_MASK);
 	return 0;

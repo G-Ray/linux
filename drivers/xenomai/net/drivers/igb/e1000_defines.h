@@ -1,0 +1,1 @@
+/home/geoffrey/Documents/git/stage/xenomai-3/kernel/drivers/net/drivers/igb/e1000_defines.h

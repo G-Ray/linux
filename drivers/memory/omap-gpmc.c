@@ -24,6 +24,7 @@
 #include <linux/module.h>
 #include <linux/gpio/driver.h>
 #include <linux/interrupt.h>
+#include <linux/ipipe.h>
 #include <linux/platform_device.h>
 #include <linux/of.h>
 #include <linux/of_address.h>
@@ -932,7 +933,7 @@ static int gpmc_cs_remap(int cs, u32 base)
 	 * Make sure we ignore any device offsets from the GPMC partition
 	 * allocated for the chip select and that the new base confirms
 	 * to the GPMC 16MB minimum granularity.
-	 */ 
+	 */
 	base &= ~(SZ_16M - 1);
 
 	gpmc_cs_get_memconf(cs, &old_base, &size);
@@ -2012,7 +2013,7 @@ static irqreturn_t gpmc_handle_irq(int irq, void *data)
 					 hwirq, virq);
 			}
 
-			generic_handle_irq(virq);
+			ipipe_handle_demuxed_irq(virq);
 		}
 	}
 

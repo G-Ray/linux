@@ -1,0 +1,1 @@
+/home/geoffrey/Documents/git/stage/xenomai-3/kernel/drivers/analogy/device.c

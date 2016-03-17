@@ -1,0 +1,1 @@
+/home/geoffrey/Documents/git/stage/xenomai-3/kernel/cobalt/include/ipipe/thread_info.h
