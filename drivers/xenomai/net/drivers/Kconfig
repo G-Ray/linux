@@ -131,6 +131,10 @@ config XENO_DRIVERS_NET_DRV_MACB
     Driver for internal MAC-controller on AT91SAM926x microcontrollers.
     Porting by Cristiano Mantovani and Stefano Banzi (Marposs SpA).
 
+config XENO_DRIVERS_NET_DRV_TI_CPSW
+    tristate "TI CPSW"
+    default m
+
 endif
 
 source "drivers/xenomai/net/drivers/experimental/Kconfig"
