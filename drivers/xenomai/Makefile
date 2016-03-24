@@ -1,1 +1,1 @@
-/home/geoffrey/Documents/git/stage/xenomai-3/kernel/drivers/Makefile
+obj-$(CONFIG_XENOMAI) += autotune/ serial/ testing/ can/ net/ analogy/ ipc/ udd/

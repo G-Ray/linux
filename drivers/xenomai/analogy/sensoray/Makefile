@@ -1,1 +1,6 @@
-/home/geoffrey/Documents/git/stage/xenomai-3/kernel/drivers/analogy/sensoray/Makefile
+
+ccflags-y += -Idrivers/xenomai/analogy
+
+obj-$(CONFIG_XENO_DRIVERS_ANALOGY_S526) += analogy_s526.o
+
+analogy_s526-y := s526.o

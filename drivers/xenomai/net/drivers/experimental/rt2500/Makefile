@@ -1,1 +1,6 @@
-/home/geoffrey/Documents/git/stage/xenomai-3/kernel/drivers/net/drivers/experimental/rt2500/Makefile
+ccflags-y += -Idrivers/xenomai/net/stack/include
+
+obj-$(CONFIG_XENO_DRIVERS_NET_DRV_RT2500) += rt_rt2x00core.o rt_rt2500pci.o
+
+rt_rt2x00core-y := rt2x00core.o
+rt_rt2500pci-y := rt2500pci.o

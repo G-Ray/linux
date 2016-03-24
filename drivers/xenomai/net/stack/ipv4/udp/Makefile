@@ -1,1 +1,5 @@
-/home/geoffrey/Documents/git/stage/xenomai-3/kernel/drivers/net/stack/ipv4/udp/Makefile
+ccflags-y += -Idrivers/xenomai/net/stack/include
+
+obj-$(CONFIG_XENO_DRIVERS_NET_RTIPV4_UDP) += rtudp.o
+
+rtudp-y := udp.o

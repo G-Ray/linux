@@ -1,1 +1,3 @@
-/home/geoffrey/Documents/git/stage/xenomai-3/kernel/drivers/autotune/Kconfig
+
+config XENO_DRIVERS_AUTOTUNE
+	tristate
